@@ -10,8 +10,8 @@ export const Signup=()=>{
     const[name,setName]=useState("");
     const[mobile,setMobile]=useState("");
     return <div>
-        <div className="bg-black">
-            <div>
+        <div className="bg-black ">
+            <div className=" flex content-center">
                 <div>
                     <Heading label={"Signup"}/>
                     <Inputbox onChange={(e)=>{
