@@ -1,12 +1,14 @@
-import { Heading } from "./components/Heading";
-import { Inputbox } from "./components/InputBox";
+import { Signup } from "./pages/Signup";
+
 const App=()=>{
   return(
     <>
-    <div className="bg-black">
-     <div><Heading label={"Signup"}/></div>
-     <div><Inputbox label={"username"} placeholder={"Jon@gmail.com"}/></div>
+
+    <div>
+      <Signup />
     </div>
+
+    
     
    
   
