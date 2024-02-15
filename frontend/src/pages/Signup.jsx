@@ -11,7 +11,7 @@ export const Signup=()=>{
     const[mobile,setMobile]=useState("");
     return <div>
         <div className="bg-black ">
-            <div className=" flex content-center">
+            <div className=" flex flex-col">
                 <div>
                     <Heading label={"Signup"}/>
                     <Inputbox onChange={(e)=>{
