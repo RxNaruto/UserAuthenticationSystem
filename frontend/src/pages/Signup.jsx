@@ -9,26 +9,27 @@ export const Signup=()=>{
     const[password,setPassword]=useState("");
     const[name,setName]=useState("");
     const[mobile,setMobile]=useState("");
-    return <div>
-        <div className="bg-black ">
-            <div className=" flex flex-col">
-                <div>
-                    <Heading label={"Signup"}/>
-                    <Inputbox onChange={(e)=>{
+    return <div className="bg-neutral-700 h-screen flex justify-center">
+        <div className=" border-amber-800 w-2/6 m-32 bg-neutral-950 border-4 shadow-2xl rounded-lg">
+            <div className="flex flex-col items-center">
+                
+                    
+                    <div><Heading label={"Signup"}/></div>
+                    <div><Inputbox onChange={(e)=>{
                         setUsername(e.target.value);
-                    }} label={"username"} placeholder={"Jon@gmail.com"}/>
+                    }} label={"username"} placeholder={"Jon@gmail.com"}/></div>
 
-                    <Inputbox onChange={(e)=>{
+                    <div><Inputbox onChange={(e)=>{
                         setPassword(e.target.value);
-                    }} label={"Password"} placeholder={"password"}/>
+                    }} label={"Password"} placeholder={"password"}/></div>
 
-                    <Inputbox onChange={(e)=>{
+                    <div><Inputbox onChange={(e)=>{
                         setName(e.target.value);
-                    }} label={"Name"} placeholder={"Jon"}/>
+                    }} label={"Name"} placeholder={"Jon"}/></div>
 
-                    <Inputbox onChange={(e)=>{
+                    <div><Inputbox onChange={(e)=>{
                         setMobile(e.target.value);
-                    }}label={"Mobile No."} placeholder={"9898989898"}/>
+                    }}label={"Mobile No."} placeholder={"9898989898"}/></div>
 
                     <div className="w-36">
                     <Button onClick={ async()=>{
@@ -43,7 +44,7 @@ export const Signup=()=>{
                     </div>
 
 
-                </div>
+                
             </div>
         </div>
     </div>
