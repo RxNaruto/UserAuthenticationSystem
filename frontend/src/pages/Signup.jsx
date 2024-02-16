@@ -3,6 +3,7 @@ import { Button } from "../components/Button"
 import { Heading } from "../components/Heading"
 import { Inputbox } from "../components/InputBox"
 import axios from "axios"
+import { Subheading } from "../components/Subheading"
 
 export const Signup=()=>{
     const[username,setUsername]=useState("");
@@ -14,7 +15,8 @@ export const Signup=()=>{
             <div className="flex flex-col items-center">
                 
                     
-                    <div><Heading label={"Signup"}/></div>
+                    <div className="pt-7"><Heading label={"Signup"}/></div>
+                    <div><Subheading label={"Enter Your details Here"} /></div>
                     <div><Inputbox onChange={(e)=>{
                         setUsername(e.target.value);
                     }} label={"username"} placeholder={"Jon@gmail.com"}/></div>
@@ -31,7 +33,7 @@ export const Signup=()=>{
                         setMobile(e.target.value);
                     }}label={"Mobile No."} placeholder={"9898989898"}/></div>
 
-                    <div className="w-36">
+                    <div className="w-36 pt-3">
                     <Button onClick={ async()=>{
                         const response = await axios.post("http://localhost:3000/api/v1/user/signup",{
                             username,
