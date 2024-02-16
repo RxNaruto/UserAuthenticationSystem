@@ -34,15 +34,27 @@ export const Signup=()=>{
                     }}label={"Mobile No."} placeholder={"9898989898"}/></div>
 
                     <div className="w-36 pt-3">
-                    <Button onClick={ async()=>{
-                        const response = await axios.post("http://localhost:3000/api/v1/user/signup",{
-                            username,
-                            password,
-                            name,
-                            mobile
-                        })
+                    <Button onClick={ async()=>{ 
+                        try{
+                             await axios.post("http://localhost:3000/api/v1/user/signup",{
+                                username,
+                                password,
+                                name,
+                                mobile
+                            })
+                            
+                            
+    
+                        }catch(e){
+                            console.log(username);
+                            console.log(password);
+                            console.log(name);
+                            console.log(mobile);
 
-                    }} label={"Signup"}/>
+
+                        }
+                        }
+                    } label={"Signup"}/>
                     </div>
 
 
