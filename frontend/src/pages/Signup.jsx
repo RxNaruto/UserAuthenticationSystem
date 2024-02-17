@@ -9,7 +9,7 @@ export const Signup=()=>{
     const[username,setUsername]=useState("");
     const[password,setPassword]=useState("");
     const[name,setName]=useState("");
-    const[mobile,setMobile]=useState("");
+    const[mobile,setMobile]=useState();
     return <div className="bg-neutral-700 h-screen flex justify-center">
         <div className="border-amber-800 w-full md:w-2/6 mx-auto md:m-32 bg-neutral-950 border-4 shadow-2xl rounded-lg">
             <div className="flex flex-col items-center">
@@ -19,19 +19,19 @@ export const Signup=()=>{
                     <div><Subheading label={"Enter Your details Here"} /></div>
                     <div><Inputbox onChange={(e)=>{
                         setUsername(e.target.value);
-                    }} label={"username"} placeholder={"Jon@gmail.com"}/></div>
+                    }} label={"username"} placeholder={"Jon@gmail.com"} value={username}/></div>
 
                     <div><Inputbox onChange={(e)=>{
                         setPassword(e.target.value);
-                    }} label={"Password"} placeholder={"password"}/></div>
+                    }} label={"Password"} placeholder={"password"} value={password}/></div>
 
                     <div><Inputbox onChange={(e)=>{
                         setName(e.target.value);
-                    }} label={"Name"} placeholder={"Jon"}/></div>
+                    }} label={"Name"} placeholder={"Jon"} value={name}/></div>
 
                     <div><Inputbox onChange={(e)=>{
-                        setMobile(e.target.value);
-                    }}label={"Mobile No."} placeholder={"9898989898"}/></div>
+                        setMobile(Number(e.target.value));
+                    }}label={"Mobile No."} placeholder={"9898989898"} value={mobile} type="number"/></div>
 
                     <div className="w-36 pt-3">
                     <Button onClick={ async()=>{ 
