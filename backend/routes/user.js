@@ -1,7 +1,7 @@
 const express = require("express");
 const { User } = require("../database/db");
 const router = express.Router();
-const {usernameSchema,passwordSchema,nameSchema,mobileSchema} = require("../Types/user")
+const {signupSchema} = require("../Types/user")
 
 router.get("/",(req,res)=>{
     res.json({
@@ -10,15 +10,12 @@ router.get("/",(req,res)=>{
 })
 
 router.post("/signup",async (req,res)=>{
-    // const usernameValidation=usernameSchema.safeParse(req.body.username);
-    // const passwordValidation=passwordSchema.safeParse(req.body.password);
-    // const nameValidation=nameSchema.safeParse(req.body.name);
-    // const mobileValidation=mobileSchema.safeParse(req.body.mobile);
-    // if(!usernameValidation.success || !passwordValidation.success || !nameValidation.success || !mobileValidation.success){
-    //     return res.status(404).json({
-    //         msg: "Incorrect Inputs"
-    //     })
-    // }
+    const signupValidation=signupSchema.safeParse(req.body);
+    if(!signupValidation.success){
+        return res.status(404).json({
+            msg: "Incorrect Inputs"
+        })
+    }
     const newUser= await User.create({
         username: req.body.username,
         password: req.body.password,
