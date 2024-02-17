@@ -11,7 +11,7 @@ export const Signup=()=>{
     const[name,setName]=useState("");
     const[mobile,setMobile]=useState("");
     return <div className="bg-neutral-700 h-screen flex justify-center">
-        <div className=" border-amber-800 w-2/6 m-32 bg-neutral-950 border-4 shadow-2xl rounded-lg">
+        <div className="border-amber-800 w-full md:w-2/6 mx-auto md:m-32 bg-neutral-950 border-4 shadow-2xl rounded-lg">
             <div className="flex flex-col items-center">
                 
                     
