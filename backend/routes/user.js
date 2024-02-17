@@ -1,7 +1,7 @@
 const express = require("express");
 const { User } = require("../database/db");
 const router = express.Router();
-const {userSchema} = require("../Types/user")
+const {usernameSchema,passwordSchema,nameSchema,mobileSchema} = require("../Types/user")
 
 router.get("/",(req,res)=>{
     res.json({
@@ -10,8 +10,11 @@ router.get("/",(req,res)=>{
 })
 
 router.post("/signup",async (req,res)=>{
-    //const userValidation=userSchema.safeParse(req.body);
-    // if(!userValidation.success){
+    // const usernameValidation=usernameSchema.safeParse(req.body.username);
+    // const passwordValidation=passwordSchema.safeParse(req.body.password);
+    // const nameValidation=nameSchema.safeParse(req.body.name);
+    // const mobileValidation=mobileSchema.safeParse(req.body.mobile);
+    // if(!usernameValidation.success || !passwordValidation.success || !nameValidation.success || !mobileValidation.success){
     //     return res.status(404).json({
     //         msg: "Incorrect Inputs"
     //     })
